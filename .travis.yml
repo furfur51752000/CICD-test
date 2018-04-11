@@ -1,20 +1,15 @@
-language: ruby
-before_deploy:
-  - zip -r latest *
-  - test -d dpl_cd_upload || mkdir dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: ${AWS_ACCESS_KEY}
+    secret_access_key: ${AWS_SECRET_KEY}
     local_dir: dpl_cd_upload
     skip_cleanup: true
     on:
       branch: master
     bucket: "codedeploy-jake-test-cicd"
   - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: ${AWS_ACCESS_KEY}
+    secret_access_key: ${AWS_SECRET_KEY}
     bucket: "codedeploy-jake-test-cicd"
     key: latest.zip
     application: travis-codedeploy-master
