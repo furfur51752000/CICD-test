@@ -1,6 +1,5 @@
 language: bash
 deploy:
-  - provider: s3
   - provider: codedeploy
     access_key_id: AKIAJGTPF63YROF5NPXA
     secret_access_key:
