@@ -1,8 +1,9 @@
 deploy:
   - provider: s3
   - provider: codedeploy
-    access_key_id: ${AWS_ACCESS_KEY}
-    secret_access_key: ${AWS_SECRET_KEY}
+    access_key_id: AKIAJGTPF63YROF5NPXA
+    secret_access_key:
+      secure: "QyOR0XoFQ5K/JZKExZqaFNf4gzqi52Byofl1qHm3Xd0cwAjj9kEk3KqElg5xddt+5K7EdDIJ0kss9BCqWr/mKiMGqV9oTgP+SrDmtTIfFS2phChrXmkrmZdheXpV99F1fc4+6vKLEVgvfdAGH3P6b2qUNWLuNGx8WRbc4UeAb6btexRCIpByI+u2ykOYYnBi0jmC49EiWuyk0Fo5KX2sMAVCeVkBeFQLTnhy14dLZzyFNNkihcBBpBYIKmtIYSSmtZBAUQIufc3el2TO2MyQ0eYOcZBNgqY3Npv5s0uTrKO0gQPwo71vZ7BnvnkYCAp7EE5eYh6xpwi6ZwNY+S/Wsvsd2LvkQIyrxpIGXqGhH0lslzSajaqJP4Q5Q8ikbUzSIcEDVuG3PKI/Xlt7caJ2H4sazHLfLAyBp6hbQqep1AWlFn6RX2FVdwAqNP5Cy6Ehwbcc47Usl/6Ku7EPJ2XgmX/e/dEhSk2qLI4hM3Rk8hmwUUPYVEqmB0em4gr8o4+JCOvbFj0TbRr8lb7YPWDYI6rehpwF6E+7Xfr27B9mXpetpqufO1x2EUbtWNWhhVMtfqcIDTjjcW64sTLmOjjzuOX0KHGyl/+bR8WreEpV6v30GXXCFYrfSEd66INc2+pAiog9l+nAnZFTQnsiYPFeJrog5iJR5uCL2tqayE/5Yk0="
     bucket: "codedeploy-jake-test-cicd"
     key: latest/MyApp.zip
     bundle_type: zip
