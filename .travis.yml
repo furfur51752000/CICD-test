@@ -13,8 +13,8 @@ deploy:
     secret_access_key: ${AWS_SECRET_KEY}
     bucket: "codedeploy-jake-test-cicd"
     key: latest.zip
-    application: travis-codedeploy-master
+    application: travisci-jake-test
     deployment_group: master
     region: ap-northeast-1
     on:
-      branch: master 
+      branch: master
