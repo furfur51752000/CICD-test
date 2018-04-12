@@ -1,7 +1,14 @@
 language: bash
 deploy:
   - provider: s3
-    ⋮ # rest of S3 deployment for MyApp.zip
+    access_key_id: AKIAJGTPF63YROF5NPXA
+    secret_access_key:
+     secure: "Mo4RG2E2OVoUzP72QHZTwFF140IIG18yXnBGnbBTuE+QRx4e0wIcqME2Yel3d7uh1wolcrxD2iC18C2uhlDgD1UKg+0i786ab/YexyqIncbuEnV056Ewalid8qexy4/xrRvr7QXiZ3/CdlELH2rhHNowGCc60ZvQIA716PUsO1mbk5Dw0f9Vl3jwHHU70iqOf0fdC/+b6Lw+PJ6+omURCC2viIqueRXj0lcp/PWyBicqV2XSVgrWIOXJEXOSc/fZtgOGTXGQQRSniaRCS3eLpfPXdeN2ceDb4Blb8pUUH1NQW86V5/3lsjiP2QK7+rQYQEzmuoi98jQV260oxFlfzH00XVZRjjsKBKaPrVvLcqkkxZ4gAaWttdIKd7zWb4xl7zwTQ2lQaOpSGndCca2aniLj+0A5KFmBLMSsKkzZxgFFPFwR7Ajb5Z3wHv8Ecbo80rM9loDo444Mlgd/VeLuLWdgVKL7bERiCx3KpkFzmna+chgpOYDsbewy5HBuo6ayhE6Ng5Kfk74TfEcl2UC8FJvmAtIj3l0ypjfrzvUDlX5g7op3fP5cAR1JB++sIh73k77wHYqtU5fsRXBFFl7BoBMyRgEDeq6gHKW7skGMTtClpjgebSh7xdIAZ2VOY7+9zgDqAZtaDzUtL5Ji9HfJNFM77/f2KRaZ9n1fyeYdl4A="
+    bucket: codedeploy-jake-test-cicd
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on:
+      branch: master
   - provider: codedeploy
     access_key_id: AKIAJGTPF63YROF5NPXA
     secret_access_key:
