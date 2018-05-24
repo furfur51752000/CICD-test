@@ -5,21 +5,21 @@ before_deploy:
   - mv latest.zip dpl_cd_upload/latest.zip
 deploy:
   - provider: s3
-    access_key_id: AKIAJGTPF63YROF5NPXA
+    access_key_id: AKIAJKQTCC6L2FJXWPOA
     secret_access_key:
-     secure: "Mo4RG2E2OVoUzP72QHZTwFF140IIG18yXnBGnbBTuE+QRx4e0wIcqME2Yel3d7uh1wolcrxD2iC18C2uhlDgD1UKg+0i786ab/YexyqIncbuEnV056Ewalid8qexy4/xrRvr7QXiZ3/CdlELH2rhHNowGCc60ZvQIA716PUsO1mbk5Dw0f9Vl3jwHHU70iqOf0fdC/+b6Lw+PJ6+omURCC2viIqueRXj0lcp/PWyBicqV2XSVgrWIOXJEXOSc/fZtgOGTXGQQRSniaRCS3eLpfPXdeN2ceDb4Blb8pUUH1NQW86V5/3lsjiP2QK7+rQYQEzmuoi98jQV260oxFlfzH00XVZRjjsKBKaPrVvLcqkkxZ4gAaWttdIKd7zWb4xl7zwTQ2lQaOpSGndCca2aniLj+0A5KFmBLMSsKkzZxgFFPFwR7Ajb5Z3wHv8Ecbo80rM9loDo444Mlgd/VeLuLWdgVKL7bERiCx3KpkFzmna+chgpOYDsbewy5HBuo6ayhE6Ng5Kfk74TfEcl2UC8FJvmAtIj3l0ypjfrzvUDlX5g7op3fP5cAR1JB++sIh73k77wHYqtU5fsRXBFFl7BoBMyRgEDeq6gHKW7skGMTtClpjgebSh7xdIAZ2VOY7+9zgDqAZtaDzUtL5Ji9HfJNFM77/f2KRaZ9n1fyeYdl4A="
+     secure: "kEu7osR1N+FWwEemEXt+NRbtMkdUOiAjKW4W5kQxQswupP4A+CAykB7hgn/BdD8LGR0D9zINV2+Iz7HVsCje5TYz5+08ofMe9rIRMFdhb/k+DlcSSDbRiSqWi3avD4VsKS3BWzmMmEA8h6u3sZJSpYVshsInnThjlRri+VRsp2HXkZYyTDB8AYai61o0vrwMWL66a8XInxbA4fpCTtWW2bOEpTR2l2hixoOzntx3WZ6vg+6PoGsn5OKT5SZNSZNmhG8ov8sTcR3Lk+CPJ39VHxdn1+7Zsk84X1OChB9928at8Px1sRBIc/UhiU+0Dn3AGN3Kt891FKgGEyYnrmAJNLumO/CfyA1nyIEsZiF7XXJIO8pzgysslrt/A+qZ2ZuOmD3jYvcoYh9oryIS2ITzwbYFiA9XrUepwFXBmhN1vBq3H7NJP4n4q2sgMvpYEQi1E6UN58vt8d3YTNlUwAga5C3p2Upyhj8XP/b0mERLkxhFSit3OZbw/kXq6SmEANrplQvJFnl8Kyl+koz05xR5Ll5Liz9ty3YlPhTsZpxhEQWAf8iuyJTMfcRjbX7dZ1UFiBH8d3hAee64THD/Mtdu8zwfJFWPI7Tm90iKnrDHk9XPy1zXZvA+fJ4b6qDAbL0mktDtDMOKcqjJfTpjnG9lBc79CRw1eiPUdErxg/jwHAc="
     local_dir: dpl_cd_upload
     skip_cleanup: true
     on:
       branch: master
-    bucket: codedeploy-jake-test-cicd
+    bucket: codedeploy-jake-test-siterouter-dev
   - provider: codedeploy
-    access_key_id: AKIAJGTPF63YROF5NPXA
+    access_key_id: AKIAJKQTCC6L2FJXWPOA
     secret_access_key:
-     secure: "Mo4RG2E2OVoUzP72QHZTwFF140IIG18yXnBGnbBTuE+QRx4e0wIcqME2Yel3d7uh1wolcrxD2iC18C2uhlDgD1UKg+0i786ab/YexyqIncbuEnV056Ewalid8qexy4/xrRvr7QXiZ3/CdlELH2rhHNowGCc60ZvQIA716PUsO1mbk5Dw0f9Vl3jwHHU70iqOf0fdC/+b6Lw+PJ6+omURCC2viIqueRXj0lcp/PWyBicqV2XSVgrWIOXJEXOSc/fZtgOGTXGQQRSniaRCS3eLpfPXdeN2ceDb4Blb8pUUH1NQW86V5/3lsjiP2QK7+rQYQEzmuoi98jQV260oxFlfzH00XVZRjjsKBKaPrVvLcqkkxZ4gAaWttdIKd7zWb4xl7zwTQ2lQaOpSGndCca2aniLj+0A5KFmBLMSsKkzZxgFFPFwR7Ajb5Z3wHv8Ecbo80rM9loDo444Mlgd/VeLuLWdgVKL7bERiCx3KpkFzmna+chgpOYDsbewy5HBuo6ayhE6Ng5Kfk74TfEcl2UC8FJvmAtIj3l0ypjfrzvUDlX5g7op3fP5cAR1JB++sIh73k77wHYqtU5fsRXBFFl7BoBMyRgEDeq6gHKW7skGMTtClpjgebSh7xdIAZ2VOY7+9zgDqAZtaDzUtL5Ji9HfJNFM77/f2KRaZ9n1fyeYdl4A="
-    bucket: codedeploy-jake-test-cicd
+     secure: "kEu7osR1N+FWwEemEXt+NRbtMkdUOiAjKW4W5kQxQswupP4A+CAykB7hgn/BdD8LGR0D9zINV2+Iz7HVsCje5TYz5+08ofMe9rIRMFdhb/k+DlcSSDbRiSqWi3avD4VsKS3BWzmMmEA8h6u3sZJSpYVshsInnThjlRri+VRsp2HXkZYyTDB8AYai61o0vrwMWL66a8XInxbA4fpCTtWW2bOEpTR2l2hixoOzntx3WZ6vg+6PoGsn5OKT5SZNSZNmhG8ov8sTcR3Lk+CPJ39VHxdn1+7Zsk84X1OChB9928at8Px1sRBIc/UhiU+0Dn3AGN3Kt891FKgGEyYnrmAJNLumO/CfyA1nyIEsZiF7XXJIO8pzgysslrt/A+qZ2ZuOmD3jYvcoYh9oryIS2ITzwbYFiA9XrUepwFXBmhN1vBq3H7NJP4n4q2sgMvpYEQi1E6UN58vt8d3YTNlUwAga5C3p2Upyhj8XP/b0mERLkxhFSit3OZbw/kXq6SmEANrplQvJFnl8Kyl+koz05xR5Ll5Liz9ty3YlPhTsZpxhEQWAf8iuyJTMfcRjbX7dZ1UFiBH8d3hAee64THD/Mtdu8zwfJFWPI7Tm90iKnrDHk9XPy1zXZvA+fJ4b6qDAbL0mktDtDMOKcqjJfTpjnG9lBc79CRw1eiPUdErxg/jwHAc="
+    bucket: codedeploy-jake-test-siterouter-dev
     key: latest.zip
     bundle_type: zip
-    application: travisci-jake-test
-    deployment_group: travisci-jake-test
+    application: jake-test-siterouter
+    deployment_group: siterouter
     region: ap-northeast-1
