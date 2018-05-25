@@ -1,25 +1,25 @@
 language: bash
 before_deploy:
-  - zip -r latest *
-  - test -d dpl_cd_upload || mkdir dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
+- zip -r latest *
+- test -d dpl_cd_upload || mkdir dpl_cd_upload
+- mv latest.zip dpl_cd_upload/latest.zip
 deploy:
-  - provider: s3
-    access_key_id: AKIAJ6LCBRM5RP4FUAJQ
-    secret_access_key:
-     secure: "GDyidzR95uNl7z5UGEC3MO/aTw3SEbv0Oh6LJzVh7mkMMZ52IrfVYyTct3heNj8+o9PVH5ShWkoNoqnw5xesjHduwMracVm8nZnMjJHBSVwvCDnatAZ1d04SFS86gtN3ehdOvg0YnktY3qUMg/nFg60CyGmzmDWpgbuIqTElyvDXsQTlzi1tk3cP8/v3hel2DPkxcf8Hg09C8Ddf9L0zakjgWx+OhbT4+cjLb9wr88cAOGMH5GLiRPp/nOhRxdLsOZGyoZ1sshdYv3E99T5JLkhfhEJx5kGXdldFozcM7vI247QrlKCtHYGTBbK0Pu7MKXVG27UrUq+in51T27uQXcGAXWW4hyIQHNMTLnfA8G/AILb+T98QPl1AlJGHuO6HB7GhHRkWnzyekFYMFaP7M732KktPFgkrBkkJz8GDW1E+A2qJqhEIWGj+D4m2bc6DMLfMfgCl00MJPrXFmHnG/dQirpmvi8mGa0fnvWyanLj6uarhZFI0BzcdKzmyC29n6d+FBe575pPHgHtAtuJCQszRSjRotfpxtfUTIZVckXAEXCuMVxIvvvIOpB+fzHa3Z/epQEA4EyzAzAt6peH7WFeBGcFOc7TRfajCiMSp3NlvembjKvxLe0L0pH1IOESYDxNl6Jjs95Bi4q8a7eEHMFHTsZDcXcuMOIVkf1zut5A="
-    local_dir: dpl_cd_upload
-    skip_cleanup: true
-    on:
-      branch: master
-    bucket: codedeploy-siterouter-test2-dev
-  - provider: codedeploy
-    access_key_id: AKIAJ6LCBRM5RP4FUAJQ
-    secret_access_key:
-     secure: "GDyidzR95uNl7z5UGEC3MO/aTw3SEbv0Oh6LJzVh7mkMMZ52IrfVYyTct3heNj8+o9PVH5ShWkoNoqnw5xesjHduwMracVm8nZnMjJHBSVwvCDnatAZ1d04SFS86gtN3ehdOvg0YnktY3qUMg/nFg60CyGmzmDWpgbuIqTElyvDXsQTlzi1tk3cP8/v3hel2DPkxcf8Hg09C8Ddf9L0zakjgWx+OhbT4+cjLb9wr88cAOGMH5GLiRPp/nOhRxdLsOZGyoZ1sshdYv3E99T5JLkhfhEJx5kGXdldFozcM7vI247QrlKCtHYGTBbK0Pu7MKXVG27UrUq+in51T27uQXcGAXWW4hyIQHNMTLnfA8G/AILb+T98QPl1AlJGHuO6HB7GhHRkWnzyekFYMFaP7M732KktPFgkrBkkJz8GDW1E+A2qJqhEIWGj+D4m2bc6DMLfMfgCl00MJPrXFmHnG/dQirpmvi8mGa0fnvWyanLj6uarhZFI0BzcdKzmyC29n6d+FBe575pPHgHtAtuJCQszRSjRotfpxtfUTIZVckXAEXCuMVxIvvvIOpB+fzHa3Z/epQEA4EyzAzAt6peH7WFeBGcFOc7TRfajCiMSp3NlvembjKvxLe0L0pH1IOESYDxNl6Jjs95Bi4q8a7eEHMFHTsZDcXcuMOIVkf1zut5A="
-    bucket: codedeploy-siterouter-test2-dev
-    key: latest.zip
-    bundle_type: zip
-    application: siterouter-test2
-    deployment_group: master
-    region: ap-northeast-1
+- provider: s3
+  access_key_id: AKIAJ6LCBRM5RP4FUAJQ
+  secret_access_key:
+   secure: "da9u9naOmNhvKtKMuUPuRSBE4DV6sgl87XvRIPz1pPJhL3g2fsbV6Ya2pjDrwBI+htR2ooEW+MXM22FLlYteJXrs5nDnSslbCwZQuHFEInT6Lfnr6IYx/L+oI6jdVneotaEiDYdppwKCvN900gKOdDrQM91Q0e0EFtq352oKTktXNYQSTNgiiIedFn3vmQUNqipQahEVrOk9OjbzIb+S4+2BocnaiJitB8kZMgn4X3mNVWYPT0eFUi3hGlHgwMd7FVH1mF7rHor9PhZn1lVQBq0yUF2OosWaDTeNuLRRwpQo7/AdO4J0zsdfXVeEpqPIl+65G/N7miH9ceyNN0AZwTm4BrGiMAQmoakhMWxER30wYU73wnd3iesXNheA/3E85uOfvo+nb3igWCcwrIUoArD9aWYvedtMyDgs0hcCJcltU0ZaH9n4zxZUzubBsh6wyr8oeo+0I4anPbESilqP8jmgVmW0FbcXY9nyq1yuYYzgTVcxrYjnZ/rkYV9DC9PuslrmeXgGtTSrt7XfrC1YyzShbBB1h9/FkoHcGFRNlXQZqLzX/7ZLYCQc88exMS0k+9690gOKBDKtys8qXFi6rQGDygbdYQOCQBJAR82rhFQALhLQ5FBpBPCiiLhFJ0HyY56mRy0ZiMkbXUx1dSNQ7nwJ2sLPyAmc3N1nD/AS/e4="
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on:
+    branch: master
+  bucket: codedeploy-siterouter-test2-dev
+- provider: codedeploy
+  access_key_id: AKIAJ6LCBRM5RP4FUAJQ
+  secret_access_key:
+   secure: "da9u9naOmNhvKtKMuUPuRSBE4DV6sgl87XvRIPz1pPJhL3g2fsbV6Ya2pjDrwBI+htR2ooEW+MXM22FLlYteJXrs5nDnSslbCwZQuHFEInT6Lfnr6IYx/L+oI6jdVneotaEiDYdppwKCvN900gKOdDrQM91Q0e0EFtq352oKTktXNYQSTNgiiIedFn3vmQUNqipQahEVrOk9OjbzIb+S4+2BocnaiJitB8kZMgn4X3mNVWYPT0eFUi3hGlHgwMd7FVH1mF7rHor9PhZn1lVQBq0yUF2OosWaDTeNuLRRwpQo7/AdO4J0zsdfXVeEpqPIl+65G/N7miH9ceyNN0AZwTm4BrGiMAQmoakhMWxER30wYU73wnd3iesXNheA/3E85uOfvo+nb3igWCcwrIUoArD9aWYvedtMyDgs0hcCJcltU0ZaH9n4zxZUzubBsh6wyr8oeo+0I4anPbESilqP8jmgVmW0FbcXY9nyq1yuYYzgTVcxrYjnZ/rkYV9DC9PuslrmeXgGtTSrt7XfrC1YyzShbBB1h9/FkoHcGFRNlXQZqLzX/7ZLYCQc88exMS0k+9690gOKBDKtys8qXFi6rQGDygbdYQOCQBJAR82rhFQALhLQ5FBpBPCiiLhFJ0HyY56mRy0ZiMkbXUx1dSNQ7nwJ2sLPyAmc3N1nD/AS/e4="
+  bucket: codedeploy-siterouter-test2-dev
+  key: latest.zip
+  bundle_type: zip
+  application: siterouter-test2
+  deployment_group: master
+  region: ap-northeast-1
